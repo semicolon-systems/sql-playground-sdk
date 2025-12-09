@@ -3,7 +3,7 @@
  * Browser and Node.js SDK for SQL explanation
  */
 
-import type { ExplanationResult } from '@sql-playground/engine';
+import type { ExplanationResult } from '@gabrudj/sql-engine';
 
 export interface ExplainOptions {
   apiUrl?: string;
@@ -88,4 +88,4 @@ export async function checkHealth(apiUrl: string = 'http://localhost:3000'): Pro
 }
 
 // Export types from engine
-export * from '@sql-playground/engine';
+export * from '@gabrudj/sql-engine';
