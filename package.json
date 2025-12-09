@@ -1,0 +1,44 @@
+{
+  "name": "@sql-playground/sdk",
+  "version": "0.1.0",
+  "description": "SQL Playground SDK for browser and Node.js",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "browser": "./dist/esm/index.js"
+    }
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist", "LICENSE", "README.md"],
+  "scripts": {
+    "build": "tsc && node build-cjs.js",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "lint": "eslint src --max-warnings=0",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "clean": "rm -rf dist"
+  },
+  "keywords": ["sql", "database", "sdk", "browser", "node"],
+  "dependencies": {
+    "@sql-playground/engine": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.2",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
