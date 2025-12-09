@@ -11,11 +11,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
+      - name: Checkout engine package
+        uses: actions/checkout@v4
+        with:
+          repository: semicolon-systems/sql-playground-engine
+          path: engine
+      
       - uses: actions/setup-node@v4
         with:
           node-version: 20.x
           cache: 'npm'
-      - run: npm ci
+      
+      - name: Build and link engine
+        run: |
+          cd engine
+          npm ci
+          npm run build
+          npm link
+          cd ..
+      
+      - name: Install dependencies
+        run: |
+          npm link @sql-playground/engine
+          npm ci
       - run: npm run lint
       - run: npm run build
       - run: npm test
