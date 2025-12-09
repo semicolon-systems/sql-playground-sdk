@@ -1,6 +1,6 @@
 {
   "name": "@gabrudj/sql-sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SQL Playground SDK for browser and Node.js",
   "license": "MIT",
   "type": "module",
@@ -19,7 +19,11 @@
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist", "LICENSE", "README.md"],
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "vitest run",
@@ -29,7 +33,13 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "clean": "rm -rf dist"
   },
-  "keywords": ["sql", "database", "sdk", "browser", "node"],
+  "keywords": [
+    "sql",
+    "database",
+    "sdk",
+    "browser",
+    "node"
+  ],
   "dependencies": {
     "@gabrudj/sql-engine": "^0.1.2"
   },
